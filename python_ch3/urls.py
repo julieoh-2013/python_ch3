@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 import emaillist.views as emaillist_views
 import emaillist2.views as emaillist2_views
-import guestbook.views as buestbook_views
+import guestbook.views as guestbook_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +30,9 @@ urlpatterns = [
     path('emaillist2/form',emaillist2_views.form),
     path('emaillist2/add', emaillist2_views.add),
 
-    path('guestbook/',buestbook_views.index),
+    path('guestbook/',guestbook_views.index),
+    path('guestbook/add',guestbook_views.add),
+    path('guestbook/deleteform',guestbook_views.deleteform),
+    path('guestbook/delete',guestbook_views.delete),
 
 ]
