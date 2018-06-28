@@ -6,11 +6,11 @@ from emaillist2.models import Emaillist2
 def index(request):
 
     emaillist2 = Emaillist2.objects.all().order_by('-id')
-    return render(request, 'index.html',{'emaillist2_list':emaillist2})
+    return render(request, 'emaillist2/index.html',{'emaillist2_list':emaillist2})
 
 
 def form(request):
-    return render(request, 'form.html')
+    return render(request, 'emaillist2/form.html')
 
 def add(request):
     emaillist2 = Emaillist2()

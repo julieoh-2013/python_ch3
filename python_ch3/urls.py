@@ -15,18 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from emaillist import views
-
+import emaillist.views as emaillist_views
+import emaillist2.views as emaillist2_views
+import guestbook.views as buestbook_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('emaillist/',views.index),
-    path('emaillist/form',views.form),
-    path('emaillist/add',views.add),
+    path('emaillist/',emaillist_views.index),
+    path('emaillist/form',emaillist_views.form),
+    path('emaillist/add',emaillist_views.add),
 
-    path('emaillist2/',views.index),
-    path('emaillist2/form',views.form),
-    path('emaillist2/add', views.add),
+    path('emaillist2/',emaillist2_views.index),
+    path('emaillist2/form',emaillist2_views.form),
+    path('emaillist2/add', emaillist2_views.add),
+
+    path('guestbook/',buestbook_views.index),
 
 ]
